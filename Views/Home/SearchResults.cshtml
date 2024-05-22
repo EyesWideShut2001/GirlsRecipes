@@ -1,0 +1,24 @@
+﻿@model RecepiesByGirls.Models.RecipeBySearch.RecipesObjModel
+
+@{
+    ViewData["Title"] = "SearchResults";
+}
+
+<h1>Search Results</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+else
+{
+    <ul>
+    @foreach (var hit in Model.hits)
+    {
+        <li>
+            <strong>Label:</strong> @hit.recipe.label <br />
+            <strong>URL:</strong> <a href="@hit.recipe.url" target="_blank">@hit.recipe.url</a>
+        </li>
+    }
+    </ul>
+}

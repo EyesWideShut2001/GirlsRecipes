@@ -1,0 +1,16 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Recipe Search";
+}
+
+<h2>Recipe Search</h2>
+
+<form asp-controller="Home" asp-action="RecipeSearch" method="post">
+    <div class="form-group">
+        <label for="searchQuery">Search for amazing recipes:</label>
+        <input type="text" class="form-control" id="searchQuery" name="searchQuery" placeholder="enter any recipe" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
