@@ -2,7 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>A safe place to look for tasty recipes</a>.</p>
-</div>
+
+<section class="hero">
+    <div class="container">
+        <h2>Welcome to the Food API</h2>
+        <p>Find the best recipes from around the world.</p>
+    </div>
+</section>
+
+<section class="search-bar">
+    <div class="container">
+        <form asp-controller="Home" asp-action="RecipeSearch" method="post">
+            <input type="text" name="query" placeholder="Search for recipes..." />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</section>

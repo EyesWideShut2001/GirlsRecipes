@@ -35,6 +35,12 @@ namespace RecepiesByGirls.Controllers
         {
             return View();
         }
+        public IActionResult FavouritesRecipes()
+        {
+            return View();
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> RecipeSearch(string searchQuery)
