@@ -11,7 +11,7 @@
 
     if (response.ok) {
         const result = await response.text();
-        console.log(result); // handle the response
+        console.log(result);
     } else {
         console.error('Error:', response.statusText);
     }
