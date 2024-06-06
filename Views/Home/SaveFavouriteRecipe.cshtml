@@ -1,0 +1,13 @@
+﻿@page
+@model RecepiesByGirls.Views.Home.SaveFavouriteRecipeModel
+@{
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    @ViewBag.ErrorMessage
+}
+else
+{
+    <p>Added to favourite recipes!</p>
+}

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -6,6 +7,7 @@ using RecepiesByGirls.Models;
 using System;
 using System.Diagnostics;
 using System.Net.Http;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 
 namespace RecepiesByGirls.Controllers
@@ -40,7 +42,25 @@ namespace RecepiesByGirls.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SaveFavouriteRecipe([FromBody] RecipeDto recipe)
+        {
+            if (recipe == null || string.IsNullOrEmpty(recipe.Label))
+            {
+                ViewBag.ErrorMessage = "The label does not exist.";
+                _logger.LogError("Label is missing.");
+                return View("SaveFavouriteRecipe");
+            }
 
+            if (string.IsNullOrEmpty(recipe.Url))
+            {
+                ViewBag.ErrorMessage = "The url is missing or do not exist.";
+                _logger.LogError("Url is missing.");
+                return View("SaveFavouriteRecipe");
+            }
+            _logger.LogInformation("label = " + recipe.Label + "url = " + recipe.Url);
+            return View("SaveFavouriteRecipe");
+        }
 
         [HttpPost]
         public async Task<IActionResult> RecipeSearch(string searchQuery)
@@ -102,4 +122,10 @@ namespace RecepiesByGirls.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+    public class RecipeDto
+    {
+        public string Label { get; set; }
+        public string Url { get; set; }
+    }
+
 }

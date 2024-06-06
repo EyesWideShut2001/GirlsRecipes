@@ -4,6 +4,9 @@
     ViewData["Title"] = "SearchResults";
 }
 
+<link rel="stylesheet" href="~/css/searchfav.css">
+ <script type="text/javascript" src="~/js/site.js"></script>
+
 <h1>Search Results</h1>
 
 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
@@ -12,6 +15,7 @@
 }
 else
 {
+    var counter = 0;
     <ul>
     @foreach (var hit in Model.hits)
     {
@@ -19,6 +23,8 @@ else
             <strong>Label:</strong> @hit.recipe.label <br />
             <strong>URL:</strong> <a href="@hit.recipe.url" target="_blank">@hit.recipe.url</a>
         </li>
+            <button type="button" onclick='OnClickFav("@hit.recipe.label", "@hit.recipe.url", "like-button-@counter")' id="like-button-@counter">Like &#10084</button>
+        counter++;
     }
     </ul>
 }
