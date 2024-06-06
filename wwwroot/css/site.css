@@ -149,3 +149,20 @@ header nav ul li a {
     font-size: 1.5em;
     margin: 10px 0;
 }
+
+.footer-icon {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-icon-img {
+    width: 69%;
+    height: auto; 
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+}
