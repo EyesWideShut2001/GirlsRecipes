@@ -1,6 +1,15 @@
 ﻿body {
+
 }
 .color-button-onclick {
-    background-color: hotpink;
+    background-color: darkred;
     color: white;
+    border: none;
+    text-align: center;
+}
+
+h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
+    margin-left: 2%;
+    margin-bottom:0%;
 }

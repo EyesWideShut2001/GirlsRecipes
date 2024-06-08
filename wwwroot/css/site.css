@@ -1,20 +1,49 @@
 html {
     font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    margin-left:0px;
 }
 
-@media (min-width: 768px) {
-    html {
-    font-size: 16px;
-    }
+.custom-navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0px solid white;
+    background-color: #f3f3f3;
+    display: flex;
+}
+
+.custom-navbar li {
+    float: left;
+}
+
+.custom-navbar li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: large;
+}
+
+.custom-navbar li a:hover {
+    background-color: #ff6347;
+    color: white;
+}
+
+.custom-navbar li a.active {
+    color: white;
+    background-color: #04AA6D;
+}
+
+.custom-navbar {
+    white-space: nowrap;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
 }
 
 body {
@@ -25,60 +54,9 @@ body {
     color: #333;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-
-header {
-    background-color: #ff6347;
-    padding: 10px 0;
-}
-
-header .logo {
-    color: white;
-    font-size: 2em;
-    text-align: center;
-}
-
-header nav ul {
-    list-style: none;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1em;
-}
-
-.hero {
-    text-align: center;
-    padding: 50px 0;
-    background-color: #ffe5d4;
-    color: #ff6347;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2em;
-}
-
 .search-bar {
     text-align: center;
-    padding: 20px 0;
+    padding: 50px 0;
     background-color: #ffffff;
     margin-top: -20px;
     width: 100%;
@@ -89,21 +67,22 @@ header nav ul li a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .search-bar input {
     width: 50%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 4px 0 0 4px;
     font-size: 1em;
 }
 
 .search-bar button {
-    padding: 10px 20px;
+    padding: 2% 2%;
     background-color: #ff6347;
+    margin-left: 1%;
     color: white;
     border: none;
     border-radius: 0 4px 4px 0;
@@ -112,7 +91,7 @@ header nav ul li a {
 }
 
 .search-bar button:hover {
-    background-color: #e5533d;
+    background-color: #bf1a00;
 }
 
 .featured-recipes {
@@ -153,19 +132,84 @@ header nav ul li a {
     margin: 10px 0;
 }
 
-.footer-icon {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer-icon-img {
-    width: 69%;
+.container img {
+    width: 40%;
     height: auto;
 }
 
-footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
+h1 {
+
+    font-weight: 800;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5%;
+    font-size: 300%;
+}
+
+h2 {
+    font-size:x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-variant: small-caps;
+    margin-bottom: 4%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.hero-image {
+    position: relative;
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
+
+.hero-text {
     text-align: center;
-    margin-top: 20px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+}
+
+footer.footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer.footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer.footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer.footer a:hover {
+    text-decoration: underline;
 }
