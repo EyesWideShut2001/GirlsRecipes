@@ -5,10 +5,12 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RecepiesByGirls.Models;
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
+using static RecepiesByGirls.Models.RecipeBySearch;
 
 namespace RecepiesByGirls.Controllers
 {
@@ -16,11 +18,12 @@ namespace RecepiesByGirls.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IConfiguration _configuration;
+        private static readonly ConcurrentDictionary<string, List<Ingredient>> _data = new ConcurrentDictionary<string, List<Ingredient>>();
 
         public HomeController(IConfiguration configuration, ILogger<HomeController> logger)
         {
             _configuration = configuration;
-            _logger = logger;
+            _logger = logger;            
         }
 
         public IActionResult Index()
@@ -40,6 +43,17 @@ namespace RecepiesByGirls.Controllers
         public IActionResult FavouritesRecipes()
         {
             return View();
+        }
+        public async Task<IActionResult> Details(string id)
+        {
+            if (_data.TryGetValue(id, out var ingredients))
+            {
+                return View(ingredients);
+            }
+            else
+            {
+                return View(new List<Ingredient>());
+            }
         }
 
         [HttpPost]
@@ -98,6 +112,10 @@ namespace RecepiesByGirls.Controllers
                     if (recipesObjModel?.hits == null || recipesObjModel.hits.Count == 0)
                     {
                         ViewBag.ErrorMessage = "No recipes found.";
+                    }
+                    foreach(var recipe in recipesObjModel.hits)
+                    {
+                        _data[recipe.recipe.label] = recipe.recipe.ingredients;
                     }
                     return View("SearchResults", recipesObjModel);
                 }

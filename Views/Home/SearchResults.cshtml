@@ -7,6 +7,29 @@
 <link rel="stylesheet" href="~/css/searchfav.css">
 <script type="text/javascript" src="~/js/site.js"></script>
 
+<style>
+    .button-container {
+        display: flex;
+         /* Adjust as needed */
+        align-items: center; /* Align items vertically */
+    }
+
+    .element1, .element2 {
+        margin-right: 10px; /* Adjust the margin between elements */
+        /* Add any additional styling as needed */
+    }
+
+    /* Apply margin only to the first element to avoid margin on the right side of the last element */
+    .element1 {
+        margin-right: 10px;
+    }
+
+    /* Apply margin only to the second element to avoid margin on the left side of the first element */
+    .element2 {
+        margin-left: 10px;
+    }
+</style>
+
 <h1>Search Results</h1>
 
 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
@@ -17,14 +40,28 @@ else
 {
     var counter = 0;
     <ul>
-    @foreach (var hit in Model.hits)
-    {
-        <li>
-            <strong>Label:</strong> @hit.recipe.label <br />
-            <strong>URL:</strong> <a href="@hit.recipe.url" target="_blank">@hit.recipe.url</a>
-        </li>
-            <button type="button" onclick='OnClickFav("@hit.recipe.label", "@hit.recipe.url", "like-button-@counter")' id="like-button-@counter">Like &#10084</button>
-        counter++;
-    }
+        @foreach (var hit in Model.hits)
+        {
+            <li>
+                <strong>Label:</strong> @hit.recipe.label <br />
+                <strong>URL:</strong> <a href="@hit.recipe.url" target="_blank">@hit.recipe.url</a>
+
+                <div class="button-container">
+                    <div class="element1">
+                        <!-- Content for element 1 -->
+                    <button type="button" onclick='OnClickFav("@hit.recipe.label", "@hit.recipe.url", "like-button-@counter")' id="like-button-@counter">Like &#10084</button>
+                    </div>
+                    <div class="element2">
+                        <!-- Content for element 2 -->
+                    <form method="get" asp-action="Details">
+                        <input type="hidden" name="id" value="@hit.recipe.label" />
+                        <button type="submit">View Ingredients</button>
+                    </form>
+                    </div>
+                </div>
+            </li>
+
+            counter++;
+        }
     </ul>
 }
