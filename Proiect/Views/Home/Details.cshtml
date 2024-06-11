@@ -1,19 +1,25 @@
 ﻿@model List<RecepiesByGirls.Models.RecipeBySearch.Ingredient>
 @{
     ViewData["Title"] = "Details";
+    ViewBag.HideFooter = "true"; // This will hide the footer
 }
 
-<h2>Ingredients</h2>
+<link rel="stylesheet" href="~/css/details.css">
+<div class="background">
+</div>
 
-<ul>
-    @if(Model.Count == 0)
-    {
-        <div>
-            Couldn't find any ingredients for this recipe
-        </div>
-    }
-    @foreach (var ingredient in Model)
-    {
-        <li>@ingredient.text</li>
-    }
-</ul>
+<div class="overlay-content">
+    <h1>Ingredients</h1>
+    <ul class="myIngr">
+        @if (Model.Count == 0)
+        {
+            <div>
+                Couldn't find any ingredients for this recipe
+            </div>
+        }
+        @foreach (var ingredient in Model)
+        {
+            <li class="listaIngr">@ingredient.text</li>
+        }
+    </ul>
+</div>
