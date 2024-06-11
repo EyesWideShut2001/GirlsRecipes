@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using RecepiesByGirls.Data;
 using RecepiesByGirls.Models;
 using System;
 using System.Collections.Concurrent;
@@ -42,6 +43,8 @@ namespace RecepiesByGirls.Controllers
         }
         public IActionResult FavouritesRecipes()
         {
+            RecipeDBController.Init();
+            ViewBag.Recipes = RecipeDBController.GetRecipes();
             return View();
         }
         public async Task<IActionResult> Details(string id)
@@ -73,6 +76,8 @@ namespace RecepiesByGirls.Controllers
                 return View("SaveFavouriteRecipe");
             }
             _logger.LogInformation("label = " + recipe.Label + "url = " + recipe.Url);
+            RecipeDBController.Init();
+            RecipeDBController.SaveRecipe(recipe.Label, recipe.Url);
             return View("SaveFavouriteRecipe");
         }
 

@@ -1,25 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-
-<section class="featured-recipes">
-    <div class="container">
-        <h2>Favourites Recipes</h2>
-        <div class="recipes">
-            <div class="recipe">
-                <img src="~/images/recipe1.jpg" alt="Recipe 1">
-                <h3>Recipe 1</h3>
-            </div>
-            <div class="recipe">
-                <img src="~/images/recipe2.jpg" alt="Recipe 2">
-                <h3>Recipe 2</h3>
-            </div>
-            <div class="recipe">
-                <img src="~/images/recipe3.jpg" alt="Recipe 3">
-                <h3>Recipe 3</h3>
-            </div>
-        </div>
-    </div>
-</section>
-
+@foreach (var recipe in ViewBag.Recipes)
+{
+    <li>
+        <strong>Label:</strong> @recipe.Label <br />
+        <strong>URL:</strong> <a href="@recipe.Url" target="_blank">@recipe.Url</a>
+    </li>
+}
