@@ -47,6 +47,12 @@ namespace RecepiesByGirls.Controllers
             ViewBag.Recipes = RecipeDBController.GetRecipes();
             return View();
         }
+
+        public IActionResult User()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Details(string id)
         {
             if (_data.TryGetValue(id, out var ingredients))

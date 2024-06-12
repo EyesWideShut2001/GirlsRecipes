@@ -1,4 +1,6 @@
-﻿@model RecepiesByGirls.Models.RecipeBySearch.RecipesObjModel
+﻿@using RecepiesByGirls.Data
+@using static RecepiesByGirls.Models.RecipeBySearch
+@model RecepiesByGirls.Models.RecipeBySearch.RecipesObjModel
 
 @{
     ViewData["Title"] = "SearchResults";
@@ -42,21 +44,20 @@ else
     <ul>
         @foreach (var hit in Model.hits)
         {
-            <li>
-                <strong>Label:</strong> @hit.recipe.label <br />
-                <strong>URL:</strong> <a href="@hit.recipe.url" target="_blank">@hit.recipe.url</a>
-
+            <li class="search-result">
+                <a href="@hit.recipe.url" class="recipe-button" target="_blank">@hit.recipe.label</a>
                 <div class="button-container">
+                    <div class="element2">
+                        <!-- Content for element 2 -->
+                        <form method="get" asp-action="Details">
+                            <input type="hidden" name="id" value="@hit.recipe.label" />
+                            <button type="submit">View Ingredients</button>
+                        </form>
+                    </div>
+
                     <div class="element1">
                         <!-- Content for element 1 -->
                     <button type="button" onclick='OnClickFav("@hit.recipe.label", "@hit.recipe.url", "like-button-@counter")' id="like-button-@counter">Like &#10084</button>
-                    </div>
-                    <div class="element2">
-                        <!-- Content for element 2 -->
-                    <form method="get" asp-action="Details">
-                        <input type="hidden" name="id" value="@hit.recipe.label" />
-                        <button type="submit">View Ingredients</button>
-                    </form>
                     </div>
                 </div>
             </li>

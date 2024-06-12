@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecepiesByGirls", "Recepies
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4A1D4DB-242C-4A10-8CE0-0E2AA99C3EE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProiect", "..\TestProiect\TestProiect.csproj", "{F0512D20-36ED-458B-96E6-39B374991100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProiect", "..\TestProiect\TestProiect.csproj", "{F0512D20-36ED-458B-96E6-39B374991100}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

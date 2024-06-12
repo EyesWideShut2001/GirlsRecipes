@@ -1,8 +1,9 @@
 ﻿body {
 
 }
+
 .color-button-onclick {
-    background-color: darkred;
+    background-color: lightseagreen;
     color: white;
     border: none;
     text-align: center;
@@ -12,4 +13,35 @@ h1{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', 'sans-serif';
     margin-left: 2%;
     margin-bottom:0%;
+}
+
+.button-container.element1{
+    text-align:center;
+    color: black;
+}
+
+.search-result{
+    margin-top: 2%;
+    font-size: large;
+    list-style: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+}
+
+.recipe-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: lightcoral;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid;
+    transition: background-color 0.3s ease;
+    width:50%;
+    margin-bottom: 0.5%;
+}
+
+.recipe-button:hover {
+    background-color: coral;
+    text-decoration: underline;
 }

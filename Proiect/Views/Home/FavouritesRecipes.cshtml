@@ -1,10 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    ViewBag.HideFooter = "true"; // This will hide the footer
 }
+
+<link rel="stylesheet" href="~/css/favrecipes.css">
+
+<h1>Your favourites recipes:</h1>
+
 @foreach (var recipe in ViewBag.Recipes)
 {
-    <li>
-        <strong>Label:</strong> @recipe.Label <br />
-        <strong>URL:</strong> <a href="@recipe.Url" target="_blank">@recipe.Url</a>
+    <li class="favourite-recipe">
+        <a href="@recipe.Url" class="recipe-button" target="_blank">@recipe.Label</a>
     </li>
 }
+

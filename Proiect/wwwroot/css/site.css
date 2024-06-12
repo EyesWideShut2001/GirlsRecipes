@@ -16,7 +16,17 @@ html {
 }
 
 .custom-navbar li {
-    float: left;
+    margin-left: 1%;
+}
+
+.logo {
+    display: block;
+    color: #666;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 5%;
+    text-decoration: none;
+    font-size: large;
 }
 
 .custom-navbar li a {

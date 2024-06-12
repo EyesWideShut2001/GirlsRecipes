@@ -7,7 +7,6 @@
 }
 
 div.ingredients {
-    text-align: center;
     margin-bottom: 0%;
 }
 
@@ -15,7 +14,7 @@ ul.myIngr {
     display: inline-block;
     text-align: left;
     margin-top: 2%;
-    font-size: x-large;
+    font-size: large;
 }
 
 li.listaIngr{
@@ -32,7 +31,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.2;
+    opacity: 0.1;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,8 +43,7 @@ html, body {
 .overlay-content {
     position: relative;
     z-index: 1;
-    text-align: center;
-    padding: 20px;
+    padding: 2%;
     color: black;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight:900;
