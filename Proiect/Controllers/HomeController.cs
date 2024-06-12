@@ -41,18 +41,17 @@ namespace RecepiesByGirls.Controllers
         {
             return View();
         }
+
+        public IActionResult User()
+        {
+            return View();
+        }
         public IActionResult FavouritesRecipes()
         {
             RecipeDBController.Init();
             ViewBag.Recipes = RecipeDBController.GetRecipes();
             return View();
         }
-
-        public IActionResult User()
-        {
-            return View();
-        }
-
         public async Task<IActionResult> Details(string id)
         {
             if (_data.TryGetValue(id, out var ingredients))

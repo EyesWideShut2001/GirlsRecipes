@@ -6,12 +6,13 @@ html {
 }
 
 .custom-navbar {
+    z-index: 1000;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     border: 0px solid white;
-    background-color: #f3f3f3;
+    background-color: darkolivegreen;
     display: flex;
 }
 
@@ -21,17 +22,18 @@ html {
 
 .logo {
     display: block;
-    color: #666;
+    color: #dddddd  ;
     text-align: center;
     margin-left: 2%;
     margin-right: 5%;
+    margin-top: 11%;
     text-decoration: none;
     font-size: large;
 }
 
 .custom-navbar li a {
     display: block;
-    color: #666;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -50,6 +52,14 @@ html {
 
 .custom-navbar {
     white-space: nowrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkolivegreen;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -148,7 +158,6 @@ body {
 }
 
 h1 {
-
     font-weight: 800;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 5%;

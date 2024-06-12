@@ -9,28 +9,6 @@
 <link rel="stylesheet" href="~/css/searchfav.css">
 <script type="text/javascript" src="~/js/site.js"></script>
 
-<style>
-    .button-container {
-        display: flex;
-         /* Adjust as needed */
-        align-items: center; /* Align items vertically */
-    }
-
-    .element1, .element2 {
-        margin-right: 10px; /* Adjust the margin between elements */
-        /* Add any additional styling as needed */
-    }
-
-    /* Apply margin only to the first element to avoid margin on the right side of the last element */
-    .element1 {
-        margin-right: 10px;
-    }
-
-    /* Apply margin only to the second element to avoid margin on the left side of the first element */
-    .element2 {
-        margin-left: 10px;
-    }
-</style>
 
 <h1>Search Results</h1>
 
@@ -51,7 +29,7 @@ else
                         <!-- Content for element 2 -->
                         <form method="get" asp-action="Details">
                             <input type="hidden" name="id" value="@hit.recipe.label" />
-                            <button type="submit">View Ingredients</button>
+                            <a href="#" class="view-ingredients-link" onclick="this.parentElement.submit()">View Ingredients</a>
                         </form>
                     </div>
 
