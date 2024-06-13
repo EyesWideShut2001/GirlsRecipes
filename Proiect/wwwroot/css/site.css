@@ -40,10 +40,10 @@ html {
     font-size: large;
 }
 
-.custom-navbar li a:hover {
-    background-color: #ff6347;
-    color: white;
-}
+    .custom-navbar li a:hover {
+        background-color: #c7573d;
+        color: white;
+    }
 
 .custom-navbar li a.active {
     color: white;
@@ -231,4 +231,18 @@ footer.footer a {
 
 footer.footer a:hover {
     text-decoration: underline;
+}
+.container {
+    flex: 1; /* This makes the main content area expand to fill the available space */
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the wrapper takes at least the full height of the viewport */
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -7,6 +8,7 @@ using RecepiesByGirls.Data;
 using RecepiesByGirls.Models;
 using System;
 using System.Collections.Concurrent;
+using System.Configuration;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Reflection.Emit;
@@ -26,6 +28,7 @@ namespace RecepiesByGirls.Controllers
             _configuration = configuration;
             _logger = logger;            
         }
+       
 
         public IActionResult Index()
         {
@@ -46,6 +49,19 @@ namespace RecepiesByGirls.Controllers
         {
             return View();
         }
+        public IActionResult signUp()
+        {
+            return View();
+        }
+      
+            [HttpPost]
+            
+
+        public IActionResult UserCongrats()
+        {
+            return View();
+        }
+        
         public IActionResult FavouritesRecipes()
         {
             RecipeDBController.Init();
