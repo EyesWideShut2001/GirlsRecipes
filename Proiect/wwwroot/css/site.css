@@ -20,13 +20,33 @@ html {
     margin-left: 1%;
 }
 
+.flex-navbar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.flex-navbar .spacer {
+    flex-grow: 1;
+}
+
+.flex-navbar li {
+    margin-right: 0;
+}
+
+.flex-navbar li:last-child {
+    margin-right: 2%;
+}
+
 .logo {
     display: block;
     color: #dddddd  ;
     text-align: center;
     margin-left: 2%;
     margin-right: 5%;
-    margin-top: 11%;
+    margin-top: 5%;
     text-decoration: none;
     font-size: large;
 }
@@ -40,10 +60,10 @@ html {
     font-size: large;
 }
 
-    .custom-navbar li a:hover {
-        background-color: #c7573d;
-        color: white;
-    }
+.custom-navbar li a:hover {
+    background-color: #c7573d;
+    color: white;
+}
 
 .custom-navbar li a.active {
     color: white;
@@ -232,9 +252,11 @@ footer.footer a {
 footer.footer a:hover {
     text-decoration: underline;
 }
+
 .container {
-    flex: 1; /* This makes the main content area expand to fill the available space */
+    flex: 1;
 }
+
 .footer {
     background-color: #f8f9fa;
     padding: 1rem 0;
@@ -244,5 +266,5 @@ footer.footer a:hover {
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Make sure the wrapper takes at least the full height of the viewport */
+    min-height: 100vh;
 }

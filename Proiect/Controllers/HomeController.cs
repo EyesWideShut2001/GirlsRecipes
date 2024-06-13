@@ -29,7 +29,6 @@ namespace RecepiesByGirls.Controllers
             _logger = logger;            
         }
        
-
         public IActionResult Index()
         {
             return View();
@@ -49,14 +48,8 @@ namespace RecepiesByGirls.Controllers
         {
             return View();
         }
-        public IActionResult signUp()
-        {
-            return View();
-        }
       
-            [HttpPost]
-            
-
+        [HttpPost]
         public IActionResult UserCongrats()
         {
             return View();
@@ -68,6 +61,7 @@ namespace RecepiesByGirls.Controllers
             ViewBag.Recipes = RecipeDBController.GetRecipes();
             return View();
         }
+
         public async Task<IActionResult> Details(string id)
         {
             if (_data.TryGetValue(id, out var ingredients))

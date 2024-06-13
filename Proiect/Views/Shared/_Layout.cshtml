@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <ul class="custom-navbar">
+        <ul class="custom-navbar flex-navbar">
             <li>
                 <h2 class="logo">RecipesByGirls</h2>
             </li>
@@ -21,12 +21,13 @@
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="FavouritesRecipes">FavouritesRecipes</a>
             </li>
 
+            <li class="spacer"></li>
             <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="User">Profile</a>
-            </li>
+
             <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="signUp">sign up</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="User">Log in</a>
             </li>
+
         </ul>
     </header>
     <div class="container">
@@ -35,16 +36,14 @@
         </main>
     </div>
 
-   @*  @if (string.IsNullOrEmpty(ViewBag.HideFooter) || ViewBag.HideFooter != "true")
+    @if (string.IsNullOrEmpty(ViewBag.HideFooter) || ViewBag.HideFooter != "true")
     {
         <footer class="border-top footer text-muted">
             <div class="container">
                 &copy; 2024 - RecipesByGirls - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </footer>
-        
-      
-    } *@
+    }
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

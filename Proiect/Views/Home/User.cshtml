@@ -1,28 +1,66 @@
-﻿@* @page
+﻿@page
 @model RecepiesByGirls.Views.Home.UserModel
 @{
     ViewBag.HideFooter = "false";
 }
 <link rel="stylesheet" href="~/css/user.css">
 
-<h1 class="login-info">Login Form</h1>
+<div class="page-content">
+    <div class="left-content">
+        <div class="login-info">
+            <p>Log in to your account</p>
+        </div>
 
-<form action="/action_page.php" method="post">
-    <div class="imgcontainer">
-        <img src="~/images/chef-avatar.png" alt="Avatar" class="avatar">
+        <div class="form-container">
+            <form action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <img src="~/images/chef-avatar.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+    <div class="right-content">
+        <div class="right-content">
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+            <div class="login-info">
+                <p>Sign Up</p>
+            </div>
 
-        <button type="submit">Login</button>
-        <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        <div class="form-container signup-form">
+            <form asp-controller="Home" asp-action="UserCongrats" method="post">
+                    <div class="imgcontainer">
+                        <img src="~/images/avatar.png" alt="Avatar" class="avatar">
+                    </div>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter your name" name="name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <div class="btn-container">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <button type="submit" class="signupbtn">Sign Up</button>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
- *@
+</div>
